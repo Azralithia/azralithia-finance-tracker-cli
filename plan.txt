@@ -1,0 +1,17 @@
+START
+Display menu:
+    1. Add expense
+    2. Add income
+    3. Show monthly summary
+    4. Exit
+
+If user chooses 1 or 2:
+    Ask amount, category, date
+    Save to database
+
+If user chooses 3:
+    Read all records from database
+    Print total income, expenses, and balance
+
+LOOP until exit
+END
