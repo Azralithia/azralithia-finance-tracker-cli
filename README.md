@@ -1,29 +1,35 @@
 # Personal Finance Tracker 💰
 
-A simple command-line finance tracker built in Python with SQLite.
-Track your income and expenses, categorize them, view monthly summaries, and review your transaction history.
+A simple command-line finance tracker built in Python with SQLite.  
+Track your income and expenses, categorize them, edit or delete entries, view monthly summaries, apply filters, and export your data.
 
 ## ✨ Features ✨
 
 - Add expenses and income with category + date
 
+- Edit and delete transactions by ID
+
 - View all transactions (ID, type, category, and date)
+
+- Paginated transaction history (10 per page)
+
+- Filter transactions (by type, category, date, amount, or ID)
 
 - View monthly summary (income, expenses, balance)
 
 - Validates dates (leap years, invalid months/days)
 
+- Export transactions to CSV (auto-generated filename with timestamp)
+
 - Clean and consistent error handling
 
 - Data stored in SQLite database (`finance.db`)
 
-
 ## 🛠️ Technologies
 
-Python 3
+- Python 3  
 
-SQLite3 (built-in, no external dependencies)
-
+- SQLite3 (built-in, no external dependencies)
 
 ## 🚀 Setup
 
@@ -58,7 +64,7 @@ Input:
 
 4 / tra / his → Show all transactions
 
-5 / exit / quit → Exit the program
+5 / exi / qui → Exit the program
 
 <pre>Enter expense amount: 50
 Enter category (e.g., Food, Rent, Salary): Food
@@ -72,18 +78,43 @@ Expense added: 50.00 | Category: Food | Date: 2025-08-17
 
 ## 🔮 Future Improvements
 
-- Edit transactions by ID
-
-- Delete transactions by ID
-
-- Category-based summaries (e.g., Food: 200, Rent: 500)
-
-- Export transactions/summary to CSV
+- Category-based summaries (e.g., All food expenses of a month → Food: 200)
 
 - Running balance view
+
+- GUI (Graphical user interface)
+
+- TUI (Text-based UI)
 
 ## 📌 Notes
 
 - Works on Linux, Windows, and macOS (Python 3 required).
 
 - Designed as a portfolio project to demonstrate Python, SQLite, and CLI programming.
+
+## 📤 Export to CSV
+
+You can export your transactions to a CSV file.  
+This will include all applied filters (if any) and export the currently visible data.
+
+Steps:
+1. Go to **Transactions** (`4` in the main menu).  
+2. Apply any filters you want (optional).  
+3. Select **Export transactions to CSV**.  
+4. The program will automatically export with a unique timestamped filename, like `transactions_2025-08-20_14-32-10.csv`
+
+Example:
+<pre>
+Choose: 4
+=== All Transactions ===
+...
+Choose: 6 (Export transactions to CSV)
+
+Transactions exported successfully to transactions_2025-08-20_14-32-10.csv
+</pre>
+
+The file will be saved in the same directory as the program, and can be opened in Excel, Google Sheets, or any text editor.
+
+## 📜 License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
