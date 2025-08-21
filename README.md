@@ -1,120 +1,81 @@
-# Personal Finance Tracker 💰
+# Azralithia Finance Tracker (CLI)
 
-A simple command-line finance tracker built in Python with SQLite.  
-Track your income and expenses, categorize them, edit or delete entries, view monthly summaries, apply filters, and export your data.
+A command-line based personal finance tracker with SQLite integration,
+CSV export, and simple reporting.\
+Built as part of the **Azralithia** suite of projects.
 
-## ✨ Features ✨
+------------------------------------------------------------------------
 
-- Add expenses and income with category + date
+## ✨ Features
 
-- Edit and delete transactions by ID
+-   💾 **SQLite Database**\
+    Automatically creates `finance.db` on first run.
 
-- View all transactions (ID, type, category, and date)
+-   ➕ **Add Transactions**\
+    Record income or expenses with amount and category.
 
-- Paginated transaction history (10 per page)
+-   📊 **View Transactions**\
+    Filter by category or show all entries.
 
-- Filter transactions (by type, category, date, amount, or ID)
+-   📜 **Export to CSV**\
+    Save transaction history to a CSV file.
 
-- View monthly summary (income, expenses, balance)
+-   📈 **Summary Reports**\
+    See income, expenses, and net balance at a glance.
 
-- Validates dates (leap years, invalid months/days)
+-   🔍 **Search & Filters**\
+    View subsets of your data for better insights.
 
-- Export transactions to CSV (auto-generated filename with timestamp)
+------------------------------------------------------------------------
 
-- Clean and consistent error handling
+## 🚀 Installation
 
-- Data stored in SQLite database (`finance.db`)
-
-## 🛠️ Technologies
-
-- Python 3  
-
-- SQLite3 (built-in, no external dependencies)
-
-## 🚀 Setup
-
-Clone the repo:
-```bash
-git clone https://github.com/Azralithia/finance-tracker.git 
-cd finance-tracker
+``` bash
+git clone https://github.com/Azralithia/azralithia-finance-tracker-cli.git
+cd azralithia-finance-tracker-cli
+python finance_tracker_cli.py
 ```
 
-Run the program:
-```bash 
-python finance_tracker.py
-```
-⚠️ Note: The database file (`finance.db`) is created automatically when you run the program.
-It is ignored with `.gitignore` 👍
+------------------------------------------------------------------------
 
-## 📖 Usage
-Main Menu
+## 📑 Usage
+
+When you run the program, you'll see a simple menu:
 <pre>=== Personal Finance Tracker ===
 1. Add Expense
 2. Add Income
 3. Show Monthly Summary
 4. Show Transaction History
 5. Exit</pre>
-Input:
 
-1 / exp → Add expense
+-   Choose an option by number.\
+-   Transactions are stored in `finance.db`.\
+-   Export create files with a unique timestamped filename, like `transactions_2025-08-20_14-32-10.csv`
 
-2 / inc → Add income
+------------------------------------------------------------------------
 
-3 / sum / mon → Show monthly summary
+## 🛠️ Requirements
 
-4 / tra / his → Show all transactions
+-   Python 3.10+\
+-   SQLite (built-in, no extra install needed)
 
-5 / exi / qui → Exit the program
-
-<pre>Enter expense amount: 50
-Enter category (e.g., Food, Rent, Salary): Food
-Enter year (YYYY): 2025
-Enter month (MM): 08
-Enter day (DD): 17
-Is this correct? 17-08-2025 (y/n): y
-
-Expense added: 50.00 | Category: Food | Date: 2025-08-17
-</pre>
+------------------------------------------------------------------------
 
 ## 🔮 Future Improvements
 
-- Category-based summaries (e.g., All food expenses of a month → Food: 200)
+-   TUI/GUI integration (see [Azralithia Finance Tracker
+    (GUI)](https://github.com/Azralithia/azralithia-finance-tracker-gui))\
+-   Budget alerts
+-   Data visualization (charts, graphs)
 
-- Running balance view
-
-- GUI (Graphical user interface)
-
-- TUI (Text-based UI)
-
-## 📌 Notes
-
-- Works on Linux, Windows, and macOS (Python 3 required).
-
-- Designed as a portfolio project to demonstrate Python, SQLite, and CLI programming.
-
-## 📤 Export to CSV
-
-You can export your transactions to a CSV file.  
-This will include all applied filters (if any) and export the currently visible data.
-
-Steps:
-1. Go to **Transactions** (`4` in the main menu).  
-2. Apply any filters you want (optional).  
-3. Select **Export transactions to CSV**.  
-4. The program will automatically export with a unique timestamped filename, like `transactions_2025-08-20_14-32-10.csv`
-
-Example:
-<pre>
-Choose: 4
-=== All Transactions ===
-...
-Choose: 6 (Export transactions to CSV)
-
-Transactions exported successfully to transactions_2025-08-20_14-32-10.csv
-</pre>
-
-The file will be saved in the same directory as the program, and can be opened in Excel, Google Sheets, or any text editor.
+------------------------------------------------------------------------
 
 ## 📜 License
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the [MIT License](LICENSE.md).
+
+------------------------------------------------------------------------
+
+## 🏷️ Credits
+
+Developed by **Azralithia**.
