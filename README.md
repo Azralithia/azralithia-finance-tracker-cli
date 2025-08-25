@@ -60,7 +60,7 @@ When you run the program, you'll see a simple menu:
 ## 🔮 Future Improvements
 
 -   TUI/GUI integration (see [Azralithia Finance Tracker
-    (GUI)](https://github.com/Azralithia/azralithia-finance-tracker-gui))\
+    (GUI)](https://github.com/Azralithia/azralithia-finance-tracker-gui))
 -   Budget alerts
 -   Data visualization (charts, graphs)
 -   Better summary reporting (weekly/yearly/custom date ranges)
