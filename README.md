@@ -1,30 +1,25 @@
 # Azralithia Finance Tracker (CLI)
 
 A command-line based personal finance tracker with SQLite integration,
-CSV export, and simple reporting.\
-Built as part of the **Azralithia** suite of projects.
+CSV export, and summary reporting.
 
 ------------------------------------------------------------------------
 
 ## ✨ Features
 
--   💾 **SQLite Database**\
-    Automatically creates `finance.db` on first run.
+-   Add income and expenses with categories and dates.
 
--   ➕ **Add Transactions**\
-    Record income or expenses with amount and category.
+-   View monthly summaries with income, expenses, and balance.
 
--   📊 **View Transactions**\
-    Filter by category or show all entries.
+-   Browse transaction history with pagination (10 per page).
 
--   📜 **Export to CSV**\
-    Save transaction history to a CSV file.
+-   Apply filters (type, category, date, amount, ID).
 
--   📈 **Summary Reports**\
-    See income, expenses, and net balance at a glance.
+-   Edit or delete existing transactions.
 
--   🔍 **Search & Filters**\
-    View subsets of your data for better insights.
+-   Export transactions to CSV with timestamped filenames.
+
+-   Persistent SQLite database storage.
 
 ------------------------------------------------------------------------
 
@@ -48,15 +43,16 @@ When you run the program, you'll see a simple menu:
 4. Show Transaction History
 5. Exit</pre>
 
--   Choose an option by number.\
--   Transactions are stored in `finance.db`.\
--   Export create files with a unique timestamped filename, like `transactions_2025-08-20_14-32-10.csv`
+(Note: **Transaction History** menu includes *filtering, editing, deleting, and CSV export*)
+-   Choose an option by number.
+-   Transactions are stored in `transactions.db`.
+-   Exports create files with a unique timestamped filename, like `transactions_2025-08-20_14-32-10.csv`
 
 ------------------------------------------------------------------------
 
 ## 🛠️ Requirements
 
--   Python 3.10+\
+-   Python 3.10+
 -   SQLite (built-in, no extra install needed)
 
 ------------------------------------------------------------------------
@@ -67,6 +63,7 @@ When you run the program, you'll see a simple menu:
     (GUI)](https://github.com/Azralithia/azralithia-finance-tracker-gui))\
 -   Budget alerts
 -   Data visualization (charts, graphs)
+-   Better summary reporting (weekly/yearly/custom date ranges)
 
 ------------------------------------------------------------------------
 
@@ -78,4 +75,4 @@ This project is licensed under the [MIT License](LICENSE.md).
 
 ## 🏷️ Credits
 
-Developed by **Azralithia**.
+Built as part of the **Azralithia** suite of projects.

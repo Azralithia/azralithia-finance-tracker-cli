@@ -3,7 +3,7 @@ import csv
 from datetime import datetime
 
 class FinanceTracker:
-    def __init__(self, db_name="finance.db"):
+    def __init__(self, db_name="transactions.db"):
         self.conn = sqlite3.connect(db_name)
         self.cursor = self.conn.cursor()
         self.counter = 0
@@ -30,7 +30,7 @@ class FinanceTracker:
         return " AND ".join(self.filters) if self.filters else "None"
     
     def _get_transaction_id(self, action):
-        # prompt user for transaction ID to edit or delete
+        # Prompt user for transaction ID to edit or delete
         while True:
             try:
                 t_id = int(input(f"Enter transaction ID to {action} (type 0 to cancel): ").strip())
@@ -63,9 +63,7 @@ class FinanceTracker:
         # Write to CSV
         with open(filename, "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
-            # Header row
             writer.writerow(["ID", "Type", "Amount", "Category", "Date"])
-            # Data rows
             writer.writerows(transactions)
 
         print(f"Transactions exported successfully to {filename}\n")
@@ -112,7 +110,6 @@ class FinanceTracker:
                 print("That date doesn’t exist. Try again.\n")
                 continue
 
-            # Confirm
             confirm = input(f"Is this correct? {date_obj.strftime('%d-%m-%Y')} (y/n): ").strip()[:1].lower()
             if confirm == 'y':
                 return date_value
@@ -347,7 +344,7 @@ class FinanceTracker:
                     transaction[2] = float(new_amount)
                 except ValueError:
                     print("Invalid amount. Try again.")
-                    continue  # restart loop from top
+                    continue  # Restart loop from top
 
             # Category
             new_category = input(f"Enter new category (Press Enter to keep {current_category}): ").strip()
@@ -380,7 +377,7 @@ class FinanceTracker:
             
             elif confirm == 'r':
                 print("Let's try again.\n")
-                continue  # restart edit process
+                continue  # Restart edit process
             
             else:
                 print("Edit cancelled.")
@@ -412,8 +409,8 @@ class FinanceTracker:
             print("\n=== Personal Finance Tracker ===")
             print("1. Add Expense")
             print("2. Add Income")
-            print("3. Monthly Summary")
-            print("4. Transactions")
+            print("3. Show Monthly Summary")
+            print("4. Show Transaction History")
             print("5. Exit")
 
             choice = input("Choose: ").strip().lower()
@@ -427,7 +424,7 @@ class FinanceTracker:
             elif choice.startswith('3') or choice.startswith('sum') or choice.startswith('mon'):
                 total_income, total_expense, balance = self.show_monthly()
                 if total_income == total_expense == balance == 0:
-                    pass  # already told user "no transactions"
+                    pass  # Already told user "no transactions"
                 else:
                     print("\n=== Summary ===")
                     print(f"Income: {total_income:.2f}, Expense: {total_expense:.2f}, Balance: {balance:.2f}\n")
